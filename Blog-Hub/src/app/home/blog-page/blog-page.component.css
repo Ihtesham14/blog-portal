@@ -13,3 +13,9 @@ overflow: hidden;
    margin: auto;
    margin-top: 20px; 
 }
+
+.logo{
+    height:80px;
+    /* border: 2px solid black; */
+    overflow: hidden;
+   }

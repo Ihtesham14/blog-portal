@@ -19,10 +19,32 @@
 
   <span class="example-spacer"></span>
   <a *ngIf="!isLoggedIn" mat-raised-button href="./signin" >Signin</a>
-  <a *ngIf="isLoggedIn" >{{UserName}}</a>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with settings icon">
-    <mat-icon>settings</mat-icon>
-  </button>
+  <!-- <a *ngIf="isLoggedIn" >{{UserName}}</a> -->
+  <div *ngIf="isLoggedIn" class="example-button-container">
+    <a mat-raised-button href="./postblog">
+      <mat-icon>upload</mat-icon>
+      Post Blog
+    </a>
+  </div>
+  <div *ngIf="isLoggedIn" class="user-section">
+    
+    <!-- Profile Picture -->
+    <div class="profile-picture" (click)="toggleSidebar()">
+      <img [src]="user.profilePicture" alt="User Profile Picture" />
+    </div>
+  
+    <!-- Sidebar -->
+    <div class="sidebar" *ngIf="sidebarVisible">
+      <ul>
+        <li><a href="#" (click)="editAccount()">Edit Account</a></li>
+        <li><a href="#" (click)="signOut()">Sign Out</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- <button  *ngIf="isLoggedIn" mat-icon-button class="example-icon" aria-label="Example icon-button with settings icon">
+  post blog <mat-icon>Upload</mat-icon>
+  </button> -->
 </mat-toolbar>
 
 <!-- Blog Cards Section -->

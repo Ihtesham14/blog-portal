@@ -90,5 +90,29 @@ export class HomeComponent implements OnInit {
     this.load_data();
   }
  
+
+  user = {
+    profilePicture: '/download.webp', // Replace with actual profile picture URL
+  };
+
+  // Sidebar visibility
+  sidebarVisible = false;
+
+  // Toggle sidebar visibility
+  toggleSidebar() {
+    this.sidebarVisible = !this.sidebarVisible;
+  }
+
+  // Handle Edit Account
+  editAccount() {
+    alert('Edit Account Clicked');
+    // Add logic to navigate to the edit account page or open a form
+  }
+
+  // Handle Sign Out
+  signOut() {
+    alert('Sign Out Clicked');
+    // Add logic for signing out the user (e.g., clear session or token)
+  }
 }
 

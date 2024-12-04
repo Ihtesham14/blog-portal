@@ -11,8 +11,8 @@ import { UsersService } from '../users.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit{
-  firstFormGroup!:FormGroup;
-  secondFormGroup!:FormGroup;
+  signupForm!:FormGroup;
+  
 
   constructor(
     private fb: FormBuilder,
@@ -24,24 +24,22 @@ export class SignupComponent implements OnInit{
 
 
   ngOnInit(): void {
-   this.firstFormGroup=this.fb.group({
+   this.signupForm=this.fb.group({
     name:[''],
     email:[],
-    phone:[]
-
-   });
-
-   this.secondFormGroup=this.fb.group({
+    phone:[],
     password:[''],
     cnfpassword:[],
+
    });
+
   }
-  isLinear = true;
+
   onSubmit(): void {
-    if(this.firstFormGroup.valid && this.secondFormGroup.valid) {
+    if(this.signupForm.valid) {
       const data={
-        ...this.firstFormGroup.value,
-        ...this.secondFormGroup.value,
+        ...this.signupForm.value,
+       
 
       };
       // const { name,  email,number, password, cnfpassword } = this.firstFormGroup.value;
