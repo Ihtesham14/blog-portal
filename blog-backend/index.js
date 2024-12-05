@@ -36,14 +36,11 @@ app.post('/signin', async (req, res) => {
 });
 
 
-// app.get('/getusers', async (req, res) => {
-//     const collection = db.collection('users');
-//     const users = await collection.find({}).toArray();
-//     if(users != null)
-//         res.status(201).json({ message: "User Details", data : users });
-//     else
-//         res.status(401).json({ message: "No Data", data: "" });
-// });
+app.post('/postBlog', async (req, res) => {
+    const inserted = await db.collection('blogs').insertOne(req.body);
+    console.log(inserted);
+    res.status(201).json(inserted);
+});
 
 // app.get('/getdataset', async (req, res) => {
 //     const collection = db.collection('dataset');

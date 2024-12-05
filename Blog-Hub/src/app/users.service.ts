@@ -22,10 +22,9 @@ export class UsersService {
     return this.http.post<any>(`${this.apiUrl}/signin`, user);
   }
 
-  getUsers(): Observable<any>{
-    return this.http.get<any>(`${this.apiUrl}/getusers`);
+  postBlog(user: any): Observable<any>{
+    return this.http.post<any>(`${this.apiUrl}/postBlog`, user);
   }
-
   setUsername(username: string): void {
     this.username = username;
   }

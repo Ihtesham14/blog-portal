@@ -39,10 +39,9 @@ export class SignupComponent implements OnInit{
     if(this.signupForm.valid) {
       const data={
         ...this.signupForm.value,
-       
-
+      
       };
-      // const { name,  email,number, password, cnfpassword } = this.firstFormGroup.value;
+      
       console.log('Sign-Up Data: ',  data );
       
       this.UserService.signup(data).subscribe(user => {
@@ -54,12 +53,5 @@ export class SignupComponent implements OnInit{
       console.log("Validation Failed")
     }
   }
-
-// onSubmit(): void {
-  
-//     console.log('Sign-In successful!');
-//     this.router.navigate(['/signin']);
-  
-// }
 
 }
